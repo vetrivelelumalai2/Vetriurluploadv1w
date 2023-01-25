@@ -105,7 +105,7 @@ async def start(bot, update):
                    [ 
                     InlineKeyboardButton("Source code ⚡", url="https://github.com/aceknox/Url_Uploader_Bot"),
                     InlineKeyboardButton("Developer 👨‍⚖️", url="https://t.me/aceknox"),
-                    InlinekeyboardButton("Support 🕺 ", url="https://t.me/knoxbots"),
+                    InlineKeyboardButton("Support 🕺 ", url="https://t.me/knoxbots"),
                 ],
             ]
          ]
