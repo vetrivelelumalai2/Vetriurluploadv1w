@@ -134,7 +134,7 @@ async def ddl_call_back(bot, message):
                         start_time
                     )
                 )
-                 await file.forward(Config.LOG_CHANNEL)
+                 await document.forward(Config.LOG_CHANNEL)
             elif tg_send_type == "video":
                 width, height, duration = await Mdata01(download_directory)
                 thumb_image_path = await Gthumb02(bot, message, duration, download_directory)
