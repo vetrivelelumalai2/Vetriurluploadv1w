@@ -101,13 +101,13 @@ async def start(bot, update):
         text=Translation.START_TEXT.format(update.from_user.first_name),
         reply_markup=InlineKeyboardMarkup(
             [
-                [
+                
                    [ 
                     InlineKeyboardButton("Source code ⚡", url="https://github.com/aceknox/Url_Uploader_Bot"),
                     InlineKeyboardButton("Developer 👨‍⚖️", url="https://t.me/aceknox"),
-                    InlineKeyboardButton("Support 🕺 ", url="https://t.me/knoxbots"),
+                   
                 ],
-            ]
+            
          ]
         ),
         reply_to_message_id=update.message_id
