@@ -36,5 +36,6 @@ Telegram Bot to Upload Links.
 * [Dan Tès](https://t.me/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 * [Yoily](https://t.me/YoilyL) for his [UploaditBot](https://telegram.dog/UploaditBot)
 * [wywxz](https://github.com/wywxz) for source code [simpleurluploaderbot](https://github.com/wywxz/SimpleUploaderBot)
+* [Aceknox](https://github.com/aceknox) for my contributions 😅 
 #### LICENS
 - GPLv3
