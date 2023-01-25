@@ -1,35 +1,29 @@
-#### [SIMPLEUPLOADERBOT](https://t.me/SimpleUploaderBot)
+#Url Uploader Bot 
 ---
 
 Telegram Bot to Upload Links.
 
 **Features**:
 
-👉 Upload [yt-dlp Supported Links](https://ytdl-org.github.io/youtube-dl/supportedsites.html) to Telegram.
+• Upload yt-dlp Supported Linkso Telegram
 
-👉 Upload HTTP/HTTPS as File/Video to Telegram.
+• Upload HTTP/HTTPS as File/Video to Telegram.
 
-👉 Upload mediafire, streamtape, google drive, fembed links (fembed.com domain).
+• Upload mediafire, streamtape, google drive, fembed links (fembed.com domain).
 
-👉 Permanent thumbnail Support.
+• Permanent thumbnail Support.
 
-**Heroku Buildpacks**
-```
-https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
-```
-```
-heroku/python
+• Broadcast feature 
+
+
+ AFTER FORK EDIT DEPLOY BUTTON REPLACE WITH YOUR REPO LINK ⚙️
 ```
 
-```
-⚠️ AFTER FORK EDIT DEPLOY BUTTON REPLACE WITH YOUR REPO LINK ⚙️
-```
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/wywxz/SimpleUploaderBot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/aceknox/Url_uploader_Bot)
 
 ## BOT COMMANDS
 
-* start - 👻 Check I'm alive or dead
+* start - 👻 Check I'm alive or dead 
 * help - 📝 How to use this robot
 * broadcast - 💌 Send message to users
 * total - 👨‍👨‍👦‍👦 To get total users count
@@ -41,5 +35,6 @@ heroku/python
 * [@SpEcHlDe](https://t.me/ThankTelegram) for his [AnyDLBot](https://telegram.dog/AnyDLBot)
 * [Dan Tès](https://t.me/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 * [Yoily](https://t.me/YoilyL) for his [UploaditBot](https://telegram.dog/UploaditBot)
-#### LICENSE
+* [wywxz](https://github.com/wywxz) for source code [simpleurluploaderbot](https://github.com/wywxz/SimpleUploaderBot)
+#### LICENS
 - GPLv3
