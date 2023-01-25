@@ -27,7 +27,7 @@ class Config(object):
     PROCESS_MAX_TIMEOUT = 3600
     # your telegram id
     OWNER_ID = int(os.environ.get("OWNER_ID", "654804764"))
-    SESSION_NAME = "SIMPLEUPLOADERBOT"
+    SESSION_NAME = "URLUPLOADERBOT"
     #log channel
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", -100))
     # database uri (mongodb)
