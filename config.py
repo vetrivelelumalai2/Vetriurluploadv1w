@@ -28,6 +28,8 @@ class Config(object):
     # your telegram id
     OWNER_ID = int(os.environ.get("OWNER_ID", "654804764"))
     SESSION_NAME = "SIMPLEUPLOADERBOT"
+    #log channel
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", -100))
     # database uri (mongodb)
     DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Knoxop24:knoxop24@cluster0.f6m6fwo.mongodb.net/?retryWrites=true&w=majority")
     MAX_RESULTS = "50"
