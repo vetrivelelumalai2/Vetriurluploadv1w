@@ -1,5 +1,5 @@
 {
-  "name": "Simple Uploader Bot",
+  "name": "Url Uploader Bot",
   "description": "Telegram Bot to Upload URLs to Telegram as File and Video.",
   "keywords": [
     "telegram",
@@ -14,9 +14,9 @@
     "remote",
     "uploader"
   ],
-  "success_url": "https://t.me/SimpleUploaderBot",
-  "website": "https://github.com/wywxz",
-  "repository": "https://github.com/wywxz/SimpleUploaderBot",
+  "success_url": "https://t.me/knoxurldownloadbot",
+  "website": "https://github.com/aceknox",
+  "repository": "https://github.com/aceknox/Url_Uploader_Bot",
 
   "env": {
     "WEBHOOK": {
