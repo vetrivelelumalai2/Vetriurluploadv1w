@@ -1,0 +1,12 @@
+pyrogram==1.4.12
+yt-dlp
+motor
+dnspython
+Pillow
+aiohttp
+hachoir
+requests
+tgcrypto
+aiofiles
+bs4
+git+https://github.com/zevtyardt/lk21@main#egg=lk21
