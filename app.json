@@ -47,6 +47,10 @@
     "DATABASE_URL": {
       "description": "Your MongoDB URI",
       "value": ""
+    },
+    "LOG_CHANNEL": {
+      "description": "Your Channel Telegram ID",
+      "value": ""
     }
 
   },
