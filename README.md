@@ -17,10 +17,6 @@ Telegram Bot to Upload Links.
 
 
  AFTER FORK EDIT DEPLOY BUTTON REPLACE WITH YOUR REPO LINK ⚙️
-```
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/aceknox/Url_uploader_Bot)
-
 ## BOT COMMANDS
 
 * start - 👻 Check I'm alive or dead 
@@ -37,5 +33,7 @@ Telegram Bot to Upload Links.
 * [Yoily](https://t.me/YoilyL) for his [UploaditBot](https://telegram.dog/UploaditBot)
 * [wywxz](https://github.com/wywxz) for source code [simpleurluploaderbot](https://github.com/wywxz/SimpleUploaderBot)
 * [Aceknox](https://github.com/aceknox) for my contributions 😅 
+
+
 #### LICENS
 - GPLv3
