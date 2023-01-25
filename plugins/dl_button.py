@@ -101,7 +101,6 @@ async def ddl_call_back(bot, message):
         else:
             start_time = time.time()
             # try to upload file
-            await audio.forward(Config.LOG_CHANNEL)
             if tg_send_type == "audio":
                 duration = await Mdata03(download_directory)
                 thumb_image_path = await Gthumb01(bot, message)
@@ -119,7 +118,7 @@ async def ddl_call_back(bot, message):
                         start_time
                     )
                 )
-            await file.forward(Config.LOG_CHANNEL)
+            await audio.forward(Config.LOG_CHANNEL)
             elif tg_send_type == "file":
                 thumb_image_path = await Gthumb01(bot, message)
                 await message.message.reply_to_message.reply_document(
@@ -135,7 +134,7 @@ async def ddl_call_back(bot, message):
                         start_time
                     )
                 )
-            await video.forward(Config.LOG_CHANNEL)
+            await file.forward(Config.LOG_CHANNEL)
             elif tg_send_type == "video":
                 width, height, duration = await Mdata01(download_directory)
                 thumb_image_path = await Gthumb02(bot, message, duration, download_directory)
@@ -156,6 +155,7 @@ async def ddl_call_back(bot, message):
                         start_time
                     )
                 )
+            await video.forward(Config.LOG_CHANNEL)
             else:
                 logger.info("Did this happen? :\\")
             end_two = datetime.now()
