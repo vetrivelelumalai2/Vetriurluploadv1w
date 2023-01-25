@@ -29,7 +29,7 @@ class Config(object):
     OWNER_ID = int(os.environ.get("OWNER_ID", "654804764"))
     SESSION_NAME = "URLUPLOADERBOT"
     #log channel
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", -100))
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "1001823745911"))
     # database uri (mongodb)
     DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Knoxop24:knoxop24@cluster0.f6m6fwo.mongodb.net/?retryWrites=true&w=majority")
     MAX_RESULTS = "50"
