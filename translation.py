@@ -4,15 +4,6 @@ I'm <b>Url Uploader Bot! ✨</b>
 
 <u>I can upload various kind of direct link formats such as:</u>
 
-1. MP4
-2. some M3U8 links
-3. YouTube
-4. Mediafire
-5. Google Drive (if link is public)
-6. Fembed (<code>fembed.com</code> domain)
-7. Streamtape (beta)
-and many other direct links!... 🥳
-
 <i>You have the ability to set custom captions and custom thumbnails for your uploads too!</i>
 
 <b>So what are you waiting for!...
