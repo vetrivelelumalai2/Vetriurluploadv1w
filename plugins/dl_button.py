@@ -165,9 +165,9 @@ async def ddl_call_back(bot, message):
             await info_msg.edit_text(
                 Translation.AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS.format(time_taken_for_download, time_taken_for_upload)
             )
-            logger.info("✅ " + custom_file_name)
-            logger.info("✅ Downloaded in: " + str(time_taken_for_download))
-            logger.info("✅ Uploaded in: " + str(time_taken_for_upload))
+            logger.info("✓ " + custom_file_name)
+            logger.info("✓ Downloaded in: " + str(time_taken_for_download))
+            logger.info("✓ Uploaded in: " + str(time_taken_for_upload))
     else:
         await info_msg.edit_text(
             Translation.NO_VOID_FORMAT_FOUND.format("Incorrect Link"),
