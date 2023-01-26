@@ -19,7 +19,7 @@ async def progress_for_pyrogram(current, total, ud_type, message, filename, star
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
         
         current_message = Translation.DISPLAY_PROGRESS.format(
-            "".join(["●" for i in range(math.floor(percentage / 5))]),
+            "".join(["☻" for i in range(math.floor(percentage / 5))]),
             "".join(["○" for i in range(20 - math.floor(percentage / 5))]),
             round(percentage, 2),
             filename,
