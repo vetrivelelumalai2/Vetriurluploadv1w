@@ -1,5 +1,5 @@
 # enable if you want it 
-"""
+
 import asyncio
 from plugins.config import Config
 from pyrogram import Client
@@ -47,4 +47,4 @@ async def handle_force_subscribe(bot, message):
             reply_to_message_id=message.message_id,
         )
         return 400
-"""
+
