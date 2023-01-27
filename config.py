@@ -33,3 +33,5 @@ class Config(object):
     # database uri (mongodb)
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
     MAX_RESULTS = "50"
+    #update channel
+    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "")
