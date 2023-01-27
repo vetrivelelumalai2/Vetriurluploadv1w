@@ -1,7 +1,7 @@
 # enable if you want it 
 
 import asyncio
-from Config import Config
+from config import Config
 from pyrogram import Client
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
