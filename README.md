@@ -5,7 +5,7 @@ Telegram Bot to Upload Links.
 
 **Features**:
 
-• Upload yt-dlp Supported Linkso Telegram
+• Upload yt-dlp Supported Link to Telegram
 
 • Upload HTTP/HTTPS as File/Video to Telegram.
 
@@ -16,7 +16,6 @@ Telegram Bot to Upload Links.
 • Broadcast feature 
 
 
- AFTER FORK EDIT DEPLOY BUTTON REPLACE WITH YOUR REPO LINK ⚙️
 ## BOT COMMANDS
 
 * start - 👻 Check I'm alive or dead 
@@ -32,7 +31,7 @@ Telegram Bot to Upload Links.
 * [Dan Tès](https://t.me/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 * [Yoily](https://t.me/YoilyL) for his [UploaditBot](https://telegram.dog/UploaditBot)
 * [wywxz](https://github.com/wywxz) for source code [simpleurluploaderbot](https://github.com/wywxz/SimpleUploaderBot)
-* [Aceknox](https://github.com/aceknox) for my contributions 😅 
+* [Aceknox](https://github.com/aceknox) for my contributions 😅 [url uploader](https://github.com/aceknox/UrlUploaderBot)
 
 
 #### LICENS
