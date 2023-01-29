@@ -28,10 +28,7 @@ class Config(object):
     # your telegram id
     OWNER_ID = int(os.environ.get("OWNER_ID", ""))
     SESSION_NAME = "URLUPLOADERBOT"
-    #log channel
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
     # database uri (mongodb)
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
     MAX_RESULTS = "50"
-    #update channel
-    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "")
+    
