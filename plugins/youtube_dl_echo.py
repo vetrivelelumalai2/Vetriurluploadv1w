@@ -2,11 +2,13 @@
 import logging
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
-import os, re, time, asyncio, json, random, string
+import os, re, time, asyncio, json, random, string ,requests, urllib.parse, filetype, shutil, tldextract, math
 from config import Config
 from plugins.forcesub import handle_force_subscribe
 from database.adduser import AddUser
 from translation import Translation
+from hachoir.metadata import extractMetadata
+from hachoir.parser import createParser
 from pyrogram import filters
 from pyrogram import Client
 from database.adduser import add_user_to_database
