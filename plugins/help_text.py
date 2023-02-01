@@ -103,7 +103,7 @@ async def start(bot, update):
             [
                 
                    [ 
-                    InlineKeyboardButton("Source code ⚡", url="https://github.com/aceknox/UrlUploaderBot"),
+                    InlineKeyboardButton("Channel ⚡", url="https://t.me/knoxbots"),
                     InlineKeyboardButton("Developer 👨‍⚖️", url="https://t.me/aceknox"),
                    
                 ],
