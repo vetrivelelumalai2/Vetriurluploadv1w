@@ -4,6 +4,7 @@ logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(name)s - %(leve
 logger = logging.getLogger(__name__)
 import os, re, time, asyncio, json, random, string
 from config import Config
+from plugins.forcesub import handle_force_subscribe
 from database.adduser import AddUser
 from translation import Translation
 from pyrogram import filters
