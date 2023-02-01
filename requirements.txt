@@ -1,4 +1,4 @@
-pyrogram==1.4.12
+pyrogram==1.4.16
 yt-dlp
 motor
 dnspython
@@ -10,3 +10,15 @@ tgcrypto
 aiofiles
 bs4
 git+https://github.com/zevtyardt/lk21@main#egg=lk21
+Flask==2.2.2
+gunicorn==20.1.0
+beautifulsoup4
+numpy
+olefile
+pymongo
+psutil
+loggers
+filetype
+tldextract
+aiofiles
+pyromod
