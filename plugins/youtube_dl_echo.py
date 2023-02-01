@@ -9,6 +9,7 @@ from database.adduser import AddUser
 from translation import Translation
 from pyrogram import filters
 from pyrogram import Client
+from pyrogram.errors import UserNotParticipant
 from helper_funcs.display_progress import humanbytes, ContentLength
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
