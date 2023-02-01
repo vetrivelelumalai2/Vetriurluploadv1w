@@ -2,15 +2,9 @@ class Translation(object):
     START_TEXT = """Hi {} 🤗,
 I'm <b>Url Uploader Bot! ✨</b>
 
-<u>I can upload various kind of direct link formats such as:</u>
-
-<i>You have the ability to set custom captions and custom thumbnails for your uploads too!</i>
-
-<b>So what are you waiting for!...
-
 Send me a direct link and I will upload it to telegram as a file/video.</b>
-
 /help for more details!
+
 <b>Join @knoxbots"""
     ADD_CAPTION_HELP = """Select an uploaded file/video or forward me <b>Any Telegram File</b> and just write the text you want to be on the file <b>as a reply to the file</b> and the text you wrote will be attached as the caption! 🤩
     
@@ -19,17 +13,16 @@ Ex: <a href='https://telegra.ph/file/198bcda5944f787373122.jpg'>See This!</a> �
     
 /help for more details!"""
     DISPLAY_PROGRESS = """[{0}{1}] {2}%
-<i>📁 {3}</i>
+<i>🗃️ {3}</i>
 
 <b>▫️Finished :</b> <i>{4} of {5}</i>
 <b>▫️Speed :</b> <i>{6}/s</i>
 <b>▫️Time left :</b> <i>{7}</i>"""
     FORMAT_SELECTION = """<b>If you haven't set <a href='{}'>a thumbnail</a> before you can send a photo now. If you don't want to don't worry - You will get an auto genarated thumbnail from the video to your upload </b>
     
-👇𝗦𝗲𝗹𝗲𝗰𝘁 𝗔𝗻𝗱 𝗖𝗵𝗼𝘀𝗲 𝗬𝗼𝘂𝗿 𝗙𝗼𝗿𝗺𝗮𝘁👇
-(If your link is a video and if you want it as a streamable video select a video option. If you want your upload in document format select a file option).
+𝗦𝗲𝗹𝗲𝗰𝘁 𝗔𝗻𝗱 𝗖𝗵𝗼𝘀𝗲 𝗬𝗼𝘂𝗿 𝗙𝗼𝗿𝗺𝗮𝘁
 
-<b>Make sure that the format you select is no larger than 2 GB.</b>"""
+<b>larger than 2 GB not support.</b>"""
     SET_CUSTOM_USERNAME_PASSWORD = """If you want to download premium videos, provide in the following format:
 URL | filename | username | password"""
     DOWNLOAD_START = """<b>File detected:</b> {}
@@ -48,10 +41,10 @@ Sorry. I cannot upload files greater than 2GB due to Telegram API limitations.
 I don't know what just happened 🙃
 But I'm going to find out and fix it as soon as possible 🧐"""
     AFTER_SUCCESSFUL_UPLOAD_MSG = "👍 Thanks for using @knoxbots."
-    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = """<i>✅ Downloaded in <b>{} seconds</b></i>
-<i>✅ Uploaded in <b>{} seconds</b></i>"""
-    SAVED_CUSTOM_THUMB_NAIL = "✅ Custom video/file thumbnail saved. This image will be used in the video/file."
-    DEL_ETED_CUSTOM_THUMB_NAIL = "✅ Custom thumbnail cleared succesfully."
+    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = """<i>◽ Downloaded in <b>{} seconds</b></i>
+<i>◽ Uploaded in <b>{} seconds</b></i>"""
+    SAVED_CUSTOM_THUMB_NAIL = "◽ Custom video/file thumbnail saved. This image will be used in the video/file."
+    DEL_ETED_CUSTOM_THUMB_NAIL = "◽ Custom thumbnail cleared succesfully."
     CUSTOM_CAPTION_UL_FILE = "{}"
     NO_FILE_FOUND = """<b>❗I couldn't find any video/file❗</b>
 Go check if you can access the content in the URL from your browser first!"""
