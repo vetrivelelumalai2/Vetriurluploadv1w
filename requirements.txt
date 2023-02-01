@@ -9,7 +9,7 @@ requests
 tgcrypto
 aiofiles
 bs4
-git+https://github.com/zevtyardt/lk21@main#egg=lk21
+lk21
 Flask==2.2.2
 gunicorn==20.1.0
 beautifulsoup4
