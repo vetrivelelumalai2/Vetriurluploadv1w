@@ -31,7 +31,7 @@ async def echo(bot, message):
             print(error)
     if not update.from_user:
         return await update.reply_text("I don't know about you sar :(")
-    await add_user_to_database(bot, update)
+    await Adduser(bot, update)
     await bot.send_chat_action(
        chat_id=update.chat.id,
        action="typing"
