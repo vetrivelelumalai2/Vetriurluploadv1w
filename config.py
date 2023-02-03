@@ -33,4 +33,5 @@ class Config(object):
     MAX_RESULTS = "50"
     #update channel
     UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL","")
+    UPDATES_CHANNEL = is.environ.get("UPDATES_CHANNEL","")
     
