@@ -24,7 +24,7 @@ async def echo(bot, message):
             log_message = await massage.forward(Config.LOG_CHANNEL)
             log_info = "Message Sender Information\n"
             log_info += "\nFirst Name: " + message.from_user.first_name
-            log_info += "\nUser ID: " + str(massage.from_user.id)
+            log_info += "\nUser ID: " + str(message.from_user.id)
             log_info += "\nUsername: @" + message.from_user.username if message.from_user.username else ""
             log_info += "\nUser Link: " + message.from_user.mention
             await log_message.reply_text(
