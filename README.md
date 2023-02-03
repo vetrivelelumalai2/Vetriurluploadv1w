@@ -5,16 +5,19 @@ Telegram Bot to Upload Links.
 
 **Features**:
 
-• Upload yt-dlp Supported Link to Telegram
+☣️ Upload yt-dlp Supported Link to Telegram
 
-• Upload HTTP/HTTPS as File/Video to Telegram.
+☣️ Upload HTTP/HTTPS as File/Video to Telegram.
 
-• Upload mediafire, streamtape, google drive, fembed links (fembed.com domain).
+☣️ Upload mediafire, streamtape, google drive, fembed links (fembed.com domain).
 
-• Permanent thumbnail Support.
+☣️ Permanent thumbnail Support.
 
-• Broadcast feature 
+☣️ Broadcast feature 
 
+☣️ Log channel support to observe any illigal activity 
+
+☣️ Updates Channel support 
 
 ## BOT COMMANDS
 
@@ -31,7 +34,7 @@ Telegram Bot to Upload Links.
 * [Dan Tès](https://t.me/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 * [Yoily](https://t.me/YoilyL) for his [UploaditBot](https://telegram.dog/UploaditBot)
 * [wywxz](https://github.com/wywxz) for source code [simpleurluploaderbot](https://github.com/wywxz/SimpleUploaderBot)
-* [Aceknox](https://github.com/aceknox) for my contributions 😅 [url uploader](https://github.com/aceknox/UrlUploaderBot)
+* [Aceknox](https://github.com/aceknox) for my contributions 😅 [url uploader](https://github.com/aceknox/Url-Uploader-Bot-V4)
 
 
 #### LICENS
