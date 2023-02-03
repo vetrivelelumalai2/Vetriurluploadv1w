@@ -1,3 +1,4 @@
+#©aceknox 
 import logging
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -5,16 +6,45 @@ import os, re, time, asyncio, json, random, string
 from config import Config
 from database.adduser import AddUser
 from translation import Translation
+from plugins.forcesub import handle_force_subscribe
+from pyrogram.errors import UserNotParticipant
+from helper_funcs.ran_text import random_char
+from database.access import clinton
 from pyrogram import filters
 from pyrogram import Client
 from helper_funcs.display_progress import humanbytes, ContentLength
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-@@Client.on_message(filters.regex(pattern=".*http.*"))
+@Client.on_message(filters.regex(pattern=".*http.*"))
+
 async def echo(bot, message):
+    if Config.LOG_CHANNEL:
+        try:
+            log_message = await massage.forward(Config.LOG_CHANNEL)
+            log_info = "Message Sender Information\n"
+            log_info += "\nFirst Name: " + message.from_user.first_name
+            log_info += "\nUser ID: " + str(massage.from_user.id)
+            log_info += "\nUsername: @" + message.from_user.username if message.from_user.username else ""
+            log_info += "\nUser Link: " + message.from_user.mention
+            await log_message.reply_text(
+                text=log_info,
+                disable_web_page_preview=True,
+                quote=True
+            )
+        except Exception as error:
+            print(error)
+    if not message.from_user:
+        return await message.reply_text("I don't know about you sar :(")
     await AddUser(bot, message)
+
+    if Config.UPDATES_CHANNEL:
+      fsub = await handle_force_subscribe(bot, message)
+      if fsub == 400:
+        return
+
     info_msg = await message.reply_text("<b>Processing... ⏳</b>", quote=True)
+    logger.info(message.from_user)
     youtube_dl_username = None
     youtube_dl_password = None
     file_name = None
