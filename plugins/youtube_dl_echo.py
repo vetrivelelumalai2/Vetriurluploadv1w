@@ -34,6 +34,9 @@ async def echo(bot, message):
             )
         except Exception as error:
             print(error)
+    
+
+    info_msg = await message.reply_text("<b>Processing... ⏳</b>", quote=True)
     if not message.from_user:
         return await message.reply_text("I don't know about you sar :(")
     await AddUser(bot, message)
@@ -42,8 +45,6 @@ async def echo(bot, message):
       fsub = await handle_force_subscribe(bot, message)
       if fsub == 400:
         return
-
-    info_msg = await message.reply_text("<b>Processing... ⏳</b>", quote=True)
     logger.info(message.from_user)
     youtube_dl_username = None
     youtube_dl_password = None
