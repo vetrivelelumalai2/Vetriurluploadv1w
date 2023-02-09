@@ -103,7 +103,7 @@ async def start(bot, update):
             [
                 
                    [ 
-                    InlineKeyboardButton("Channel ⚡", url="https://t.me/knoxbots"),
+                    InlineKeyboardButton("Channel ⚡", url="https://t.me/knoxprojects"),
                     InlineKeyboardButton("Developer 👨‍⚖️", url="https://t.me/aceknox"),
                    
                 ],
