@@ -40,7 +40,7 @@ Sorry. I cannot upload files greater than 2GB due to Telegram API limitations.
     UNKNOWN_ERROR = """<b>❗UNKNOWN ERROR❗</b>
 I don't know what just happened 🙃
 But I'm going to find out and fix it as soon as possible 🧐"""
-    AFTER_SUCCESSFUL_UPLOAD_MSG = "👍 Thanks for using @knoxbots."
+    AFTER_SUCCESSFUL_UPLOAD_MSG = "👍 Thanks for using @knoxprojects."
     AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = """<i>◽ Downloaded in <b>{} seconds</b></i>
 <i>◽ Uploaded in <b>{} seconds</b></i> please consider donate"""
     SAVED_CUSTOM_THUMB_NAIL = "◽ Custom video/file thumbnail saved. This image will be used in the video/file."
