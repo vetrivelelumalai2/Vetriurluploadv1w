@@ -15,7 +15,7 @@ Telegram Bot to Upload Links.
 
 ☣️ Broadcast feature 
 
-☣️ Log channel support to observe any illigal activity 
+☣️ Log channel support 
 
 ☣️ Updates Channel support 
 
