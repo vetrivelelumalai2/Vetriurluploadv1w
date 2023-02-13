@@ -2,6 +2,7 @@ import os
 import datetime
 import motor.motor_asyncio
 from pyrogram import enums
+from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
 
 class temp(object):
     BANNED_USERS = []
