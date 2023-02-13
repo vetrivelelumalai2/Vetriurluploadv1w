@@ -1,44 +1,182 @@
 #under development
-"""from pyrogram import Client, filters
-from plugins.helper.admin_check import admin_check
-from plugins.helper.extract import extract_time, extract_user                               
+"""import asyncio
+from logger import logger
+from pyrogram import filters
+from configs.config import dm
+from pyrogram import Client as ILovePDF
+from pyrogram.errors import ChatAdminRequired
+from configs.db import dataBASE, BANNED_USR_DB, BANNED_GRP_DB
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
 
+if dataBASE.MONGODB_URI:
+    from database import db
 
-@Client.on_message(filters.command("ban"))
-async def ban_user(_, message):
-    is_admin = await admin_check(message)
-    if not is_admin:
-        return 
-    user_id, user_first_name = extract_user(message)
+# =========================================================================================================> BANNED USER <=============================================
+@Client.on_message(filters.incoming & filters.command('ban') &
+                    filters.private & filters.user(dm.ADMINS))
+async def _banUser(bot, message):
     try:
-        await message.chat.ban_member(user_id=user_id)
-    except Exception as error:
-        await message.reply_text(str(error))                    
-    else:
-        if str(user_id).lower().startswith("@"):
-            await message.reply_text(f"Someone else is dusting off..! \n{user_first_name} \nIs forbidden.")                              
+        if not dataBASE.MONGODB_URI:
+            return await message.reply("Sry, Bot Don't have a DB", quote=True)
+        procs = await message.reply("⚙️ `Processing..`",quote=True)
+        await asyncio.sleep(1)
+        if len(message.command) == 1:
+            return await procs.edit("Give me a user id / username")
+        reM = message.text.split(None)
+        if len(reM) > 2:
+            chat = message.text.split(None, 2)[1]
+            reason = message.text.split(None, 2)[2]
         else:
-            await message.reply_text(f"Someone else is dusting off..! \n<a href='tg://user?id={user_id}'>{user_first_name}</a> Is forbidden")                      
+            chat = message.command[1]
+            reason = "oru chugam 😏"
+        try:
+            chat = int(chat)
+        except Exception: pass    # if username [Exception]
+        try:
+            userINFO = await bot.get_users(chat)
+        except PeerIdInvalid:
+            return await procs.edit("This is an invalid user, make sure ia have met him before..")
+        except IndexError:
+            return await procs.edit("This might be a channel, make sure its a user..")
+        except Exception as e:
+            return await procs.edit(f"Error: `{e}`")
+        else:
+            if userINFO.id == 531733867:
+                return await procs.edit(
+                    f"Before Banning {userINFO.mention}.!\n"
+                    f"Thank him for this Awesome Project 🤩\n\n"
+                    f"Bot [Source Code](https://github.com/nabilanavab/iLovePDF) 😲"
+                )
+            elif (userINFO.id in dm.ADMINS):
+                return await procs.edit(
+                    f"I Never Ban {userINFO.mention}.. \n"
+                    f"Reason: iCantBanBotADMIN 😏"
+                )
+            status = await db.get_key(id=userINFO.id, key="banned")
+            if status:
+                return await procs.edit(
+                    f"{userINFO.mention} is already banned\n"
+                    f"Reason: {status}"
+                )
+            await db.set_key(id=userINFO.id, key="banned", value=reason)
+            BANNED_USR_DB.append(userINFO.id)
+            await procs.edit(f"Successfully banned {userINFO.mention}")
+    except Exception as e:
+        logger.exception("/plugins/dm/banned/ban: %s" %(e), exc_info=True)
+
+@Client.on_message(filters.incoming & filters.command('unban')
+                    & filters.private & filters.user(dm.ADMINS))
+async def _unbanUser(bot, message):
+    try:
+        if not dataBASE.MONGODB_URI:
+            return await message.reply("Sry, Bot Don't have a DB", quote=True)
+        procs = await message.reply("⚙️ `Processing..`", quote=True)
+        await asyncio.sleep(1)
+        if len(message.command) == 1:
+            return await procs.edit("Give me a user id / username")
+        reM = message.text.split(None)
+        if len(reM) > 2:
+            chat = message.text.split(None, 2)[1]
+            reason = message.text.split(None, 2)[2]
+        else:
+            chat = message.command[1]
+            reason = "No reason Provided"
+        try:
+            chat = int(chat)
+        except Exception: pass
+        try:
+            userINFO = await bot.get_users(chat)
+        except PeerIdInvalid:
+            return await procs.edit("This is an invalid user, make sure ia have met him before..")
+        except IndexError:
+            return await procs.edit("This might be a channel, make sure its a user..")
+        except Exception as e:
+            return await procs.edit(f"Error: `{e}`")
+        else:
+            status = await db.get_key(id=userINFO.id, key="banned")
+            logger.debug(userINFO.id)
+            logger.debug(status)
+            if not status:
+                return await procs.edit(f"{userINFO.mention} is not yet banned.")
+            await db.dlt_key(id=userINFO.id, key="banned")
+            BANNED_USR_DB.remove(userINFO.id)
+            await procs.edit(f"Successfully unbanned {userINFO.mention}")
+    except Exception as e:
+        logger.exception("/plugins/dm/banned/unban: %s" %(e), exc_info=True)
+
+banUser = filters.create(lambda _, __, query: query.data.startswith(tuple(["banU|", "banC|"])))
+@Client.on_callback_query(banUser)
+async def _banUserCB(bot, callbackQuery):
+    try:
+        if callbackQuery.data.startswith("banU|"):
+            chat_type = "user"
+        else:
+            chat_type = "chat"
+        if callbackQuery.from_user.id not in dm.ADMINS:
+            return await callbackQuery.answer("Message Not for U.. =(")
+        userID = int(callbackQuery.data.split("|")[1])
+        if userID == 531733867:
+            return await callbackQuery.answer(
+                f"Don't Even Think about banning\n\n𝙽𝙰𝙱𝙸𝙻  𝙰  𝙽𝙰𝚅𝙰𝙱\n\n"
+                f"He's the master brain behind this project 😎", show_alert = True
+            )
+        elif userID in dm.ADMINS:
+            return await callbackQuery.answer(
+                f"I Never Ban Him.. 😏\nReason: iCantBanBotADMIN", show_alert = True
+            )
+        else:
+            if chat_type == "user":
+                if userID in BANNED_USR_DB:
+                    return await callbackQuery.answer(f"He is already banned")
+                await db.set_key(id=userID, key="banned", value="oru rasam.. 😝")
+                BANNED_USR_DB.append(userID)
+                _ = f"unbanU|{userID}"
+            else:
+                if userID in BANNED_GRP_DB:
+                    return await callbackQuery.answer(f"chat is already banned")
+                await db.set_key(id=userID, key="banned", value="oru rasam.. 😝", typ="group")
+                BANNED_GRP_DB.append(userID)
+                _ = f"unbanC|{userID}"
             
+            await callbackQuery.answer(f"Successfully banned Him 😎")
+            return await callbackQuery.message.edit_reply_markup(
+                InlineKeyboardMarkup(
+                    [[InlineKeyboardButton("🔴 UNB@N USER 🔴", callback_data=_)]]
+                ))
+    except Exception as e:
+        logger.exception("/plugins/dm/banned/bancb %(e)s ERROR", exc_info=True)
 
-@Client.on_message(filters.command("tban"))
-async def temp_ban_user(_, message):
-    is_admin = await admin_check(message)
-    if not is_admin:
-        return
-    if not len(message.command) > 1:
-        return
-    user_id, user_first_name = extract_user(message)
-    until_date_val = extract_time(message.command[1])
-    if until_date_val is None:
-        return await message.reply_text(text=f"Invalid time type specified. \nExpected m, h, or d, Got it: {message.command[1][-1]}")   
+unbanUser = filters.create(lambda _, __, query: query.data.startswith(tuple(["unbanU|", "unbanC|"])))
+@Client.on_callback_query(unbanUser)
+async def _unbanUserCB(bot, callbackQuery):
     try:
-        await message.chat.ban_member(user_id=user_id, until_date=until_date_val)            
-    except Exception as error:
-        await message.reply_text(str(error))
-    else:
-        if str(user_id).lower().startswith("@"):
-            await message.reply_text(f"Someone else is dusting off..!\n{user_first_name}\nbanned for {message.command[1]}!")
+        if callbackQuery.data.startswith("unbanU|"):
+            chat_type = "user"
         else:
-            await message.reply_text(f"Someone else is dusting off..!\n<a href='tg://user?id={user_id}'>Lavane</a>\n banned for {message.command[1]}!")
-                """
+            chat_type = "chat"
+        if callbackQuery.from_user.id not in dm.ADMINS:
+            return await callbackQuery.answer("Lesham Ulupp..")
+        userID = int(callbackQuery.data.split("|")[1])
+        
+        if chat_type == "user":
+            if userID not in BANNED_USR_DB:
+                return await callbackQuery.answer(f"He is not yet banned")
+            await db.dlt_key(id=userID, key="banned")
+            BANNED_USR_DB.remove(userID)
+            _ = f"banU|{userID}"
+        else:
+            if userID not in BANNED_GRP_DB:
+                return await callbackQuery.answer("Not Banned yet")
+            await db.dlt_key(id=userID, key="banned", typ="group")
+            BANNED_GRP_DB.remove(userID)
+            _ = f"banC|{userID}"
+        
+        await callbackQuery.answer(f"Successfully Unbanned Him 😎")
+        return await callbackQuery.message.edit_reply_markup(
+            InlineKeyboardMarkup(
+                [[InlineKeyboardButton("✅ B@N USER ✅", callback_data=_)]]
+            ))
+    except Exception as e:
+        logger.exception("/pl/dm/banned/unbancb %s" %(e), exc_info=True)
+"""
