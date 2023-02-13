@@ -65,7 +65,7 @@ async def _banUser(bot, message):
     except Exception as e:
         logger.exception("/plugins/dm/banned/ban: %s" %(e), exc_info=True)
 
-@Client.on_message(filters.incoming & filters.command('unban')
+@Clinton.on_message(filters.incoming & filters.command('unban')
                     & filters.private & filters.user(dm.ADMINS))
 async def _unbanUser(bot, message):
     try:
@@ -106,7 +106,7 @@ async def _unbanUser(bot, message):
         logger.exception("/plugins/dm/banned/unban: %s" %(e), exc_info=True)
 
 banUser = filters.create(lambda _, __, query: query.data.startswith(tuple(["banU|", "banC|"])))
-@Client.on_callback_query(banUser)
+@Clinton.on_callback_query(banUser)
 async def _banUserCB(bot, callbackQuery):
     try:
         if callbackQuery.data.startswith("banU|"):
@@ -148,7 +148,7 @@ async def _banUserCB(bot, callbackQuery):
         logger.exception("/plugins/dm/banned/bancb %(e)s ERROR", exc_info=True)
 
 unbanUser = filters.create(lambda _, __, query: query.data.startswith(tuple(["unbanU|", "unbanC|"])))
-@Client.on_callback_query(unbanUser)
+@Clinton.on_callback_query(unbanUser)
 async def _unbanUserCB(bot, callbackQuery):
     try:
         if callbackQuery.data.startswith("unbanU|"):
