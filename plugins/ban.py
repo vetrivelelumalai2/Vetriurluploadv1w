@@ -2,8 +2,7 @@
 
 
 
-
-    from pyrogram import Client, filters
+from pyrogram import Client as Clinton, filters
 from utils import temp
 from pyrogram.types import Message
 from database.users_chats_db import db
