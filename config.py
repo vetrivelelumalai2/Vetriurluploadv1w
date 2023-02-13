@@ -31,6 +31,7 @@ class Config(object):
     SESSION_NAME = "URLUPLOADERBOT"
     # database uri (mongodb)
     DATABASE_URL = os.environ.get("DATABASE_URL",)
+    DATABASE_NAME = os.environ.get("DATABASE_NAME",)
     MAX_RESULTS = "50"
     #update channel
     UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL",)
