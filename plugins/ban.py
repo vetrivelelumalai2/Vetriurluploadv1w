@@ -8,7 +8,7 @@ from pyrogram.types import Message
 from database.users_chats_db import db
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
-from info import ADMINS 
+from config import ADMINS 
 
 async def banned_users(_, client, message: Message):
     return (
