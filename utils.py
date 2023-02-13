@@ -1,6 +1,7 @@
 import os
 import datetime
 import motor.motor_asyncio
+from pyrogram import enums
 
 class temp(object):
     BANNED_USERS = []
