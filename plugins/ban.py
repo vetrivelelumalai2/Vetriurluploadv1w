@@ -3,7 +3,7 @@
 from logger import logger
 from pyrogram import filters
 from configs.config import dm
-from pyrogram import Client as ILovePDF
+from pyrogram import Client as Clinton
 from pyrogram.errors import ChatAdminRequired
 from configs.db import dataBASE, BANNED_USR_DB, BANNED_GRP_DB
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
@@ -13,7 +13,7 @@ if dataBASE.MONGODB_URI:
     from database import db
 
 # =========================================================================================================> BANNED USER <=============================================
-@Client.on_message(filters.incoming & filters.command('ban') &
+@Clinton.on_message(filters.incoming & filters.command('ban') &
                     filters.private & filters.user(dm.ADMINS))
 async def _banUser(bot, message):
     try:
