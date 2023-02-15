@@ -7,6 +7,8 @@ from config import Config
 from translation import Translation
 from plugins.custom_thumbnail import *
 from helper_funcs.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
+from database.adduser import AddUser
+from pyrogram.errors import UserNotParticipant
 
 async def get(url):
     headers = {
