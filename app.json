@@ -15,8 +15,8 @@
     "uploader"
   ],
   "success_url": "https://t.me/Urluploaderadvancedbot",
-  "website": "https://github.com/aceknox",
-  "repository": "https://github.com/aceknox/Url-Uploader-Bot-V4",
+  "website": "https://github.com/vetrivelelumalai2",
+  "repository": "https://github.com/vetrivelelumalai2/Vetriurluploadv1w",
 
   "env": {
     "WEBHOOK": {
@@ -62,7 +62,7 @@
   "addons": [ ],
   "buildpacks": [
   {
-    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    "url": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full-shared.7z"
   },
   {
     "url": "heroku/python"
