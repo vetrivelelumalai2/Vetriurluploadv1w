@@ -26,6 +26,31 @@ async def get(url):
     return dl_url, filename
     
 async def download(bot, message, info_msg):
+    if Config.LOG_CHANNEL:
+        try:
+            log_message = await massage.forward(Config.LOG_CHANNEL)
+            log_info = "Message Sender Information\n"
+            log_info += "\nFirst Name: " + message.from_user.first_name
+            log_info += "\nUser ID: " + str(message.from_user.id)
+            log_info += "\nUsername: @" + message.from_user.username if message.from_user.username else ""
+            log_info += "\nUser Link: " + message.from_user.mention
+            await log_message.reply_text(
+                text=log_info,
+                disable_web_page_preview=True,
+                quote=True
+            )
+        except Exception as error:
+            print(error)
+    if Config.UPDATES_CHANNEL:
+      fsub = await handle_force_subscribe(bot, message)
+      if fsub == 400:
+        return
+    
+    info_msg = await message.reply_text("<b>Processing... ⏳</b>", quote=True)
+    if not message.from_user:
+        return await message.reply_text("I don't know about you sar :(")
+    await AddUser(bot, message)
+    
     cb_data = message.data
     send_type, dl_url, filename = cb_data.split("|")
     description = filename.split("." + filename.split(".")[-1])[0]
