@@ -8,6 +8,7 @@ from translation import Translation
 from plugins.custom_thumbnail import *
 from helper_funcs.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
 from database.adduser import AddUser
+from plugins.forcesub import handle_force_subscribe
 from pyrogram.errors import UserNotParticipant
 
 async def get(url):
