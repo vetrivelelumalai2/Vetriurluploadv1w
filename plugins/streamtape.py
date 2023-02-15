@@ -1,3 +1,4 @@
+# © aceknox
 
 import os, requests, asyncio, aiohttp, time, math, re
 from datetime import datetime
